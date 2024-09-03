@@ -2,7 +2,7 @@
   "name": "continue",
   "icon": "media/icon.png",
   "author": "Continue Dev, Inc",
-  "version": "0.8.49",
+  "version": "0.8.54",
   "repository": {
     "type": "git",
     "url": "https://github.com/continuedev/continue"
@@ -576,13 +576,13 @@
     "@types/uuid": "^9.0.8",
     "@vscode/ripgrep": "^1.15.9",
     "@vscode/test-electron": "^2.3.9",
-    "axios": "^1.2.5",
+    "axios": "^1.7.4",
     "core": "file:../../core",
     "cors": "^2.8.5",
     "dbinfoz": "^0.11.0",
     "downshift": "^7.6.0",
     "esbuild": "^0.17.19",
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "fkill": "^8.1.0",
     "follow-redirects": "^1.15.4",
     "handlebars": "^4.7.8",
@@ -614,7 +614,7 @@
     "uuidv4": "^6.2.13",
     "vectordb": "^0.4.20",
     "vscode-languageclient": "^8.0.2",
-    "ws": "^8.13.0",
+    "ws": "^8.17.1",
     "yarn": "^1.22.21"
   }
 }

@@ -11,7 +11,7 @@ export function setupApiKeysMode(
     ...config,
     models: config.models.filter((model) => model.provider !== "free-trial"),
     embeddingsProvider: {
-      provider: "free-trial",
+      provider: "transformers.js",
     },
     reranker: {
       name: "free-trial",
@@ -43,8 +43,7 @@ export function setupLocalMode(
       model: "starcoder2:3b",
     },
     embeddingsProvider: {
-      provider: "ollama",
-      model: "nomic-embed-text",
+      provider: "transformers.js",
     },
     reranker: undefined,
   };
@@ -65,7 +64,7 @@ export function setupFreeTrialMode(
       model: TRIAL_FIM_MODEL,
     },
     embeddingsProvider: {
-      provider: "free-trial",
+      provider: "transformers.js",
     },
     reranker: {
       name: "free-trial",

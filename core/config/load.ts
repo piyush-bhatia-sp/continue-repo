@@ -30,7 +30,6 @@ import {
   SlashCommand,
 } from "../index.js";
 import TransformersJsEmbeddingsProvider from "../indexing/embeddings/TransformersJsEmbeddingsProvider.js";
-import { allEmbeddingsProviders } from "../indexing/embeddings/index.js";
 import { BaseLLM } from "../llm/index.js";
 import { llmFromDescription } from "../llm/llms/index.js";
 
@@ -144,7 +143,6 @@ function loadSerializedConfig(
   config.models = models;
   let providers = config.contextProviders?.filter((contextProvider) => contextProvider.name != "docs")
   config.contextProviders = providers;
-
   return config;
 }
 
@@ -353,34 +351,6 @@ async function intermediateToFinalConfig(
   }
 
   // Embeddings Provider
-  const embeddingsProviderDescription = config.embeddingsProvider as
-    | EmbeddingsProviderDescription
-    | undefined;
-  /*  
-  if (embeddingsProviderDescription?.provider) {
-    const { provider, ...options } = embeddingsProviderDescription;
-    const embeddingsProviderClass = allEmbeddingsProviders[provider];
-    if (embeddingsProviderClass) {
-      if (
-        embeddingsProviderClass.name === "_TransformersJsEmbeddingsProvider"
-      ) {
-        config.embeddingsProvider = new embeddingsProviderClass();
-      } else {
-        config.embeddingsProvider = new embeddingsProviderClass(
-          options,
-          (url: string | URL, init: any) =>
-            fetchwithRequestOptions(url, init, {
-              ...config.requestOptions,
-              ...options.requestOptions,
-            }),
-        );
-      }
-    }
-  }
-  if (!config.embeddingsProvider) {
-    config.embeddingsProvider = new TransformersJsEmbeddingsProvider();
-  }
-  */
   config.embeddingsProvider = new TransformersJsEmbeddingsProvider();
   
 

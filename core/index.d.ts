@@ -754,16 +754,8 @@ export interface ModelDescription {
 }
 
 export type EmbeddingsProviderName =
-  | "huggingface-tei"
   | "transformers.js"
-  | "ollama"
-  | "openai"
-  | "cohere"
-  | "free-trial"
-  | "gemini"
-  | "continue-proxy"
-  | "deepinfra";
-
+  
 export interface EmbedOptions {
   apiBase?: string;
   apiKey?: string;
@@ -962,8 +954,6 @@ export interface Config {
   reranker?: RerankerDescription | Reranker;
   /** Experimental configuration */
   experimental?: ExperimentalConfig;
-  /** Analytics configuration */
-  analytics?: AnalyticsConfig;
 }
 
 // in the actual Continue source code

@@ -7,8 +7,6 @@ import {
   IdeSettings,
   SerializedContinueConfig,
 } from "../../index.js";
-import ContinueProxyEmbeddingsProvider from "../../indexing/embeddings/ContinueProxyEmbeddingsProvider.js";
-import ContinueProxy from "../../llm/llms/stubs/ContinueProxy.js";
 import { Telemetry } from "../../util/posthog.js";
 import { loadFullConfigNode } from "../load.js";
 

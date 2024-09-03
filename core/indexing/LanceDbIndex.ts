@@ -262,7 +262,7 @@ export class LanceDbIndex implements CodebaseIndex {
       progress: 0,
       desc: `Computing embeddings for ${
         results.compute.length
-      } ${this.formatListPlurality("file", results.compute.length)}`,
+      } ${this.formatListPlurality("file", results.compute.length)} with embeddings as ${this.embeddingsProvider.providerName} and id as ${this.embeddingsProvider.id}`,
       status: "indexing",
     };
 

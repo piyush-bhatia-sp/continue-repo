@@ -8,9 +8,9 @@ import { ControlPlaneClient } from "../../control-plane/client.js";
 import { SiteIndexingConfig } from "../../index.js";
 import DocsService from "../../indexing/docs/DocsService.js";
 import preIndexedDocs from "../../indexing/docs/preIndexedDocs.js";
-import FreeTrialEmbeddingsProvider from "../../indexing/embeddings/FreeTrialEmbeddingsProvider.js";
 import FileSystemIde from "../../util/filesystem.js";
 import { editConfigJson, getConfigJsonPath } from "../../util/paths.js";
+import TransformersJsEmbeddingsProvider from "../../indexing/embeddings/TransformersJsEmbeddingsProvider.js";
 
 describe.skip("DocsService Integration Tests", () => {
   let ide: FileSystemIde;
@@ -130,7 +130,7 @@ describe.skip("DocsService Integration Tests", () => {
     editConfigJson((config) => ({
       ...config,
       embeddingsProvider: {
-        provider: FreeTrialEmbeddingsProvider.providerName,
+        provider: TransformersJsEmbeddingsProvider.providerName,
       },
     }));
 
