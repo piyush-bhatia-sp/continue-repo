@@ -4,7 +4,6 @@ import { AzureOpenAIApi } from "./apis/AzureOpenAI.js";
 import { BaseLlmApi } from "./apis/base.js";
 import { CohereApi } from "./apis/Cohere.js";
 import { DeepSeekApi } from "./apis/DeepSeek.js";
-import { GeminiApi } from "./apis/Gemini.js";
 import { JinaApi } from "./apis/Jina.js";
 import { OpenAIApi } from "./apis/OpenAI.js";
 
@@ -37,8 +36,6 @@ export function constructLlmApi(config: LlmApiConfig): BaseLlmApi {
       return new CohereApi(config);
     case "anthropic":
       return new AnthropicApi(config);
-    case "gemini":
-      return new GeminiApi(config);
     case "jina":
       return new JinaApi(config);
     case "deepinfra":

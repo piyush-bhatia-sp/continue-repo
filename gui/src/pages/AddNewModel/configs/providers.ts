@@ -334,27 +334,6 @@ Select the \`GPT-4o\` model below to complete your provider configuration, but n
       return p;
     }),
   },
-  gemini: {
-    title: "Google Gemini API",
-    provider: "gemini",
-    refPage: "geminiapi",
-    description:
-      "Try out Google's state-of-the-art Gemini model from their API.",
-    longDescription: `To get started with Google Gemini API, obtain your API key from [here](https://ai.google.dev/tutorials/workspace_auth_quickstart) and paste it below.`,
-    icon: "gemini.png",
-    tags: [ModelProviderTags.RequiresApiKey],
-    collectInputFor: [
-      {
-        inputType: "text",
-        key: "apiKey",
-        label: "API Key",
-        placeholder: "Enter your Gemini API key",
-        required: true,
-      },
-    ],
-    packages: [models.gemini15Pro, models.geminiPro, models.gemini15Flash],
-    apiKeyUrl: "https://aistudio.google.com/app/apikey",
-  },
   lmstudio: {
     title: "LM Studio",
     provider: "lmstudio",
