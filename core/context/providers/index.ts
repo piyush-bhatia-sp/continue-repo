@@ -16,7 +16,6 @@ import JiraIssuesContextProvider from "./JiraIssuesContextProvider/index.js";
 import LocalsProvider from "./LocalsProvider.js";
 import OSContextProvider from "./OSContextProvider.js";
 import OpenFilesContextProvider from "./OpenFilesContextProvider.js";
-import PostgresContextProvider from "./PostgresContextProvider.js";
 import ProblemsContextProvider from "./ProblemsContextProvider.js";
 import SearchContextProvider from "./SearchContextProvider.js";
 import TerminalContextProvider from "./TerminalContextProvider.js";
@@ -45,7 +44,6 @@ const Providers: (typeof BaseContextProvider)[] = [
   DocsContextProvider,
   GitLabMergeRequestContextProvider,
   JiraIssuesContextProvider,
-  PostgresContextProvider,
   DatabaseContextProvider,
   CodeContextProvider,
   CurrentFileContextProvider,

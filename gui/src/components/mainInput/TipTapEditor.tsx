@@ -56,7 +56,7 @@ import {
   getSlashCommandDropdownOptions,
 } from "./getSuggestion";
 import { ComboBoxItem } from "./types";
-
+import DOMPurify from "dompurify";
 const InputBoxDiv = styled.div`
   resize: none;
 
@@ -553,7 +553,7 @@ function TipTapEditor(props: TipTapEditorProps) {
       const json = editor.getJSON();
 
       // Don't do anything if input box is empty
-      if (JSON.stringify(json.content).length===0  || '{}' || "[{}]" || "[]"){
+      if (!DOMPurify.sanitize(json.content)?.some((c) => c.content)) {
         return;
       }
 

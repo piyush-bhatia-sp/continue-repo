@@ -61,9 +61,6 @@ export function fetchwithRequestOptions(
       requestOptions.clientCertificate.key,
       "utf8",
     );
-    if (requestOptions.clientCertificate.passphrase) {
-      agentOptions.passphrase = requestOptions.clientCertificate.passphrase;
-    }
   }
 
   const proxy = requestOptions?.proxy;
