@@ -551,9 +551,8 @@ function TipTapEditor(props: TipTapEditorProps) {
   const onEnterRef = useUpdatingRef(
     (modifiers: InputModifiers) => {
       const json = editor.getJSON();
-
       // Don't do anything if input box is empty
-      if (!(DOMPurify.sanitize(json.content)?.some((c) => c.content))) {
+      if (!json.content?.some((c) => DOMPurify.sanitize(c.content))) {
         return;
       }
 

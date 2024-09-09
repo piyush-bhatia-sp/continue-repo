@@ -35,7 +35,6 @@ import { llmFromDescription } from "../llm/llms/index.js";
 
 import { execSync } from "child_process";
 import CodebaseContextProvider from "../context/providers/CodebaseContextProvider.js";
-import ContinueProxyContextProvider from "../context/providers/ContinueProxyContextProvider.js";
 import { fetchwithRequestOptions } from "../util/fetchWithOptions.js";
 import { copyOf } from "../util/index.js";
 import mergeJson from "../util/merge.js";
@@ -338,13 +337,7 @@ async function intermediateToFinalConfig(
       }
       const instance: IContextProvider = new cls(provider.params);
 
-      // Handle continue-proxy
-      if (instance.description.title === "continue-proxy") {
-        (instance as ContinueProxyContextProvider).workOsAccessToken =
-          workOsAccessToken;
-      }
 
-      contextProviders.push(instance);
     } else {
       contextProviders.push(new CustomContextProviderClass(provider));
     }

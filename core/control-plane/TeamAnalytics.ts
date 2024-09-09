@@ -1,6 +1,5 @@
 import { Analytics } from "@continuedev/config-types";
 import os from "node:os";
-import ContinueProxyAnalyticsProvider from "./analytics/ContinueProxyAnalyticsProvider.js";
 import { IAnalyticsProvider } from "./analytics/IAnalyticsProvider.js";
 import LogStashAnalyticsProvider from "./analytics/LogStashAnalyticsProvider.js";
 import PostHogAnalyticsProvider from "./analytics/PostHogAnalyticsProvider.js";
@@ -14,8 +13,6 @@ function createAnalyticsProvider(
       return new PostHogAnalyticsProvider();
     case "logstash":
       return new LogStashAnalyticsProvider();
-    case "continue-proxy":
-      return new ContinueProxyAnalyticsProvider();
     default:
       return undefined;
   }
