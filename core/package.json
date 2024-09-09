@@ -84,7 +84,7 @@
     "system-ca": "^1.0.3",
     "tree-sitter-wasms": "^0.1.11",
     "uuid": "^9.0.1",
-    "vectordb": "^0.4.20",
+    "vectordb": "^0.9.0",
     "web-tree-sitter": "^0.21.0",
     "win-ca": "^3.5.1",
     "workerpool": "^9.1.3",
