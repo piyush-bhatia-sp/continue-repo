@@ -1,18 +1,12 @@
 import { Analytics } from "@continuedev/config-types";
 import os from "node:os";
 import { IAnalyticsProvider } from "./analytics/IAnalyticsProvider.js";
-import LogStashAnalyticsProvider from "./analytics/LogStashAnalyticsProvider.js";
-import PostHogAnalyticsProvider from "./analytics/PostHogAnalyticsProvider.js";
 
 function createAnalyticsProvider(
   config: Analytics,
 ): IAnalyticsProvider | undefined {
   // @ts-ignore
   switch (config.provider) {
-    case "posthog":
-      return new PostHogAnalyticsProvider();
-    case "logstash":
-      return new LogStashAnalyticsProvider();
     default:
       return undefined;
   }

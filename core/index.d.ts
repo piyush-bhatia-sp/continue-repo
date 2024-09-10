@@ -779,13 +779,8 @@ export interface EmbeddingsProvider {
 }
 
 export type RerankerName =
-  | "cohere"
-  | "voyage"
   | "llm"
-  | "free-trial"
-  | "huggingface-tei"
-  | "continue-proxy";
-
+  
 export interface RerankerDescription {
   name: RerankerName;
   params?: { [key: string]: any };

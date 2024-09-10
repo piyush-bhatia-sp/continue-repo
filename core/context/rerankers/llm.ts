@@ -52,10 +52,7 @@ export class LLMReranker implements Reranker {
       {
         maxTokens: 1,
         model:
-          this.llm.providerName.startsWith("openai") &&
-          this.llm.model.startsWith("gpt-4")
-            ? "gpt-3.5-turbo"
-            : this.llm.model,
+          this.llm.model,
       },
     );
 

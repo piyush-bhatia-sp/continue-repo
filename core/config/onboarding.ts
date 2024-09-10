@@ -14,7 +14,7 @@ export function setupApiKeysMode(
       provider: "transformers.js",
     },
     reranker: {
-      name: "free-trial",
+      name: "llm",
     },
   };
 }
@@ -67,7 +67,7 @@ export function setupFreeTrialMode(
       provider: "transformers.js",
     },
     reranker: {
-      name: "free-trial",
+      name: "llm",
     },
   };
 }

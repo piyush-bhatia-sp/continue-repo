@@ -337,6 +337,7 @@ async function intermediateToFinalConfig(
       }
       const instance: IContextProvider = new cls(provider.params);
 
+      contextProviders.push(instance);
 
     } else {
       contextProviders.push(new CustomContextProviderClass(provider));
