@@ -150,25 +150,7 @@ export class WorkOsAuthProvider implements AuthenticationProvider, Disposable {
   private async _refreshSession(
     refreshToken: string,
   ): Promise<{ accessToken: string; refreshToken: string; expiresIn: number }> {
-    const response = await fetch(new URL("/auth/refresh", CONTROL_PLANE_URL), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        refreshToken,
-      }),
-    });
-    if (!response.ok) {
-      const text = await response.text();
-      throw new Error("Error refreshing token: " + text);
-    }
-    const data = (await response.json()) as any;
-    return {
-      accessToken: data.accessToken,
-      refreshToken: data.refreshToken,
-      expiresIn: WorkOsAuthProvider.EXPIRATION_TIME_MS,
-    };
+    throw new Error("Error refreshing token: ");
   }
 
   /**

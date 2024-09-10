@@ -337,60 +337,6 @@ Not seeing what you want? Create an issue [here](https://github.com/continuedev/
 
 ## Building Your Own Context Provider
 
-### Introductory Example
-
-To write your own context provider, you just have to implement the `CustomContextProvider`
-interface:
-
-```typescript
-interface CustomContextProvider {
-  title: string;
-  displayTitle?: string;
-  description?: string;
-  renderInlineAs?: string;
-  type?: ContextProviderType;
-  getContextItems(
-    query: string,
-    extras: ContextProviderExtras,
-  ): Promise<ContextItem[]>;
-  loadSubmenuItems?: (
-    args: LoadSubmenuItemsArgs,
-  ) => Promise<ContextSubmenuItem[]>;
-}
-```
-
-As an example, let's say you have a set of internal documents that have been indexed in a vector database. You've set up a simple REST API that allows internal users to query and get back relevant snippets. This context provider will send the query to this server and return the results from the vector database. The return type of `getContextItems` _must_ be an array of objects that have all of the following properties:
-
-- `name`: The name of the context item, which will be displayed as a title
-- `description`: A longer description of the context item
-- `content`: The actual content of the context item, which will be fed to the LLM as context
-
-```typescript title="~/.continue/config.ts"
-const RagContextProvider: CustomContextProvider = {
-  title: "rag",
-  displayTitle: "RAG",
-  description:
-    "Retrieve snippets from our vector database of internal documents",
-
-  getContextItems: async (
-    query: string,
-    extras: ContextProviderExtras,
-  ): Promise<ContextItem[]> => {
-    const response = await fetch("https://internal_rag_server.com/retrieve", {
-      method: "POST",
-      body: JSON.stringify({ query }),
-    });
-
-    const results = await response.json();
-
-    return results.map((result) => ({
-      name: result.title,
-      description: result.title,
-      content: result.contents,
-    }));
-  },
-};
-```
 
 It can then be added in `config.ts` like so:
 
